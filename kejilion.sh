@@ -376,7 +376,7 @@ case $choice in
             exit 1
         fi
     fi
-    wget --no-check-certificate -O tcpx.sh https://raw.githubusercontent.com/ylx2016/Linux-NetSpeed/master/tcpx.sh
+    wget --no-check-certificate -O tcpx.sh https://mirror.ghproxy.com/https://raw.githubusercontent.com/ylx2016/Linux-NetSpeed/master/tcpx.sh
     chmod +x tcpx.sh
     ./tcpx.sh
     ;;
@@ -776,7 +776,7 @@ case $choice in
             exit 1
         fi
     fi
-    # wget -N https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh && bash menu.sh [option] [lisence]
+    # wget -N https://mirror.ghproxy.com/https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh && bash menu.sh [option] [lisence]
     wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh [option] [lisence/url/token]
     ;;
 
@@ -812,7 +812,7 @@ case $choice in
               ;;
           3)
               clear
-              wget -qO- https://github.com/yeahwu/check/raw/main/check.sh | bash
+              wget -qO- https://mirror.ghproxy.com/https://github.com/yeahwu/check/raw/main/check.sh | bash
               ;;
           4)
               clear
@@ -820,7 +820,7 @@ case $choice in
               ;;
           5)
               clear
-              curl https://raw.githubusercontent.com/zhucaidan/mtr_trace/main/mtr_trace.sh | bash
+              curl https://mirror.ghproxy.com/https://raw.githubusercontent.com/zhucaidan/mtr_trace/main/mtr_trace.sh | bash
               ;;
           6)
               clear
@@ -946,7 +946,7 @@ case $choice in
               else
                   echo "未知的包管理器!"
               fi
-              bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh') $xitong -v 64 -p $vpspasswd -port 22
+              bash <(wget --no-check-certificate -qO- 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh') $xitong -v 64 -p $vpspasswd -port 22
               ;;
             [Nn])
               echo "已取消"
@@ -1065,13 +1065,13 @@ case $choice in
       # 创建必要的目录和文件
       cd /home && mkdir -p web/html web/mysql web/certs web/conf.d web/redis web/log/nginx && touch web/docker-compose.yml
 
-      wget -O /home/web/nginx.conf https://raw.githubusercontent.com/kejilion/nginx/main/nginx10.conf
-      wget -O /home/web/conf.d/default.conf https://raw.githubusercontent.com/kejilion/nginx/main/default10.conf
+      wget -O /home/web/nginx.conf https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/nginx/main/nginx10.conf
+      wget -O /home/web/conf.d/default.conf https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/nginx/main/default10.conf
       localhostIP=$(curl -s ipv4.ip.sb)
       sed -i "s/localhost/$localhostIP/g" /home/web/conf.d/default.conf
 
       # 下载 docker-compose.yml 文件并进行替换
-      wget -O /home/web/docker-compose.yml https://raw.githubusercontent.com/kejilion/docker/main/LNMP-docker-compose-10.yml
+      wget -O /home/web/docker-compose.yml https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/docker/main/LNMP-docker-compose-10.yml
 
       dbrootpasswd=$(openssl rand -base64 16) && dbuse=$(openssl rand -hex 4) && dbusepasswd=$(openssl rand -base64 8)
 
@@ -1189,7 +1189,7 @@ case $choice in
 
       docker start nginx
 
-      wget -O /home/web/conf.d/$yuming.conf https://raw.githubusercontent.com/kejilion/nginx/main/wordpress.com.conf
+      wget -O /home/web/conf.d/$yuming.conf https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/nginx/main/wordpress.com.conf
       sed -i "s/yuming.com/$yuming/g" /home/web/conf.d/$yuming.conf
 
       cd /home/web/html
@@ -1241,14 +1241,14 @@ case $choice in
 
       docker start nginx
 
-      wget -O /home/web/conf.d/$yuming.conf https://raw.githubusercontent.com/kejilion/nginx/main/discuz.com.conf
+      wget -O /home/web/conf.d/$yuming.conf https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/nginx/main/discuz.com.conf
 
       sed -i "s/yuming.com/$yuming/g" /home/web/conf.d/$yuming.conf
 
       cd /home/web/html
       mkdir $yuming
       cd $yuming
-      wget https://github.com/kejilion/Website_source_code/raw/main/Discuz_X3.5_SC_UTF8_20230520.zip
+      wget https://mirror.ghproxy.com/https://github.com/kejilion/Website_source_code/raw/main/Discuz_X3.5_SC_UTF8_20230520.zip
       unzip -o Discuz_X3.5_SC_UTF8_20230520.zip
       rm Discuz_X3.5_SC_UTF8_20230520.zip
 
@@ -1295,14 +1295,14 @@ case $choice in
 
       docker start nginx
 
-      wget -O /home/web/conf.d/$yuming.conf https://raw.githubusercontent.com/kejilion/nginx/main/kdy.com.conf
+      wget -O /home/web/conf.d/$yuming.conf https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/nginx/main/kdy.com.conf
 
       sed -i "s/yuming.com/$yuming/g" /home/web/conf.d/$yuming.conf
 
       cd /home/web/html
       mkdir $yuming
       cd $yuming
-      wget https://github.com/kalcaddle/kodbox/archive/refs/tags/1.42.04.zip
+      wget https://mirror.ghproxy.com/https://github.com/kalcaddle/kodbox/archive/refs/tags/1.42.04.zip
       unzip -o 1.42.04.zip
       rm 1.42.04.zip
 
@@ -1347,18 +1347,18 @@ case $choice in
 
       docker start nginx
 
-      wget -O /home/web/conf.d/$yuming.conf https://raw.githubusercontent.com/kejilion/nginx/main/maccms.com.conf
+      wget -O /home/web/conf.d/$yuming.conf https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/nginx/main/maccms.com.conf
 
       sed -i "s/yuming.com/$yuming/g" /home/web/conf.d/$yuming.conf
 
       cd /home/web/html
       mkdir $yuming
       cd $yuming
-      wget https://github.com/magicblack/maccms_down/raw/master/maccms10.zip && unzip maccms10.zip && rm maccms10.zip
-      cd /home/web/html/$yuming/maccms10-master/template/ && wget https://github.com/kejilion/Website_source_code/raw/main/DYXS2.zip && unzip DYXS2.zip && rm /home/web/html/$yuming/maccms10-master/template/DYXS2.zip
+      wget https://mirror.ghproxy.com/https://github.com/magicblack/maccms_down/raw/master/maccms10.zip && unzip maccms10.zip && rm maccms10.zip
+      cd /home/web/html/$yuming/maccms10-master/template/ && wget https://mirror.ghproxy.com/https://github.com/kejilion/Website_source_code/raw/main/DYXS2.zip && unzip DYXS2.zip && rm /home/web/html/$yuming/maccms10-master/template/DYXS2.zip
       cp /home/web/html/$yuming/maccms10-master/template/DYXS2/asset/admin/Dyxs2.php /home/web/html/$yuming/maccms10-master/application/admin/controller
       cp /home/web/html/$yuming/maccms10-master/template/DYXS2/asset/admin/dycms.html /home/web/html/$yuming/maccms10-master/application/admin/view/system
-      mv /home/web/html/$yuming/maccms10-master/admin.php /home/web/html/$yuming/maccms10-master/vip.php && wget -O /home/web/html/$yuming/maccms10-master/application/extra/maccms.php https://raw.githubusercontent.com/kejilion/Website_source_code/main/maccms.php
+      mv /home/web/html/$yuming/maccms10-master/admin.php /home/web/html/$yuming/maccms10-master/vip.php && wget -O /home/web/html/$yuming/maccms10-master/application/extra/maccms.php https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/Website_source_code/main/maccms.php
 
       docker exec nginx chmod -R 777 /var/www/html
       docker exec php chmod -R 777 /var/www/html
@@ -1406,14 +1406,14 @@ case $choice in
 
       docker start nginx
 
-      wget -O /home/web/conf.d/$yuming.conf https://raw.githubusercontent.com/kejilion/nginx/main/dujiaoka.com.conf
+      wget -O /home/web/conf.d/$yuming.conf https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/nginx/main/dujiaoka.com.conf
 
       sed -i "s/yuming.com/$yuming/g" /home/web/conf.d/$yuming.conf
 
       cd /home/web/html
       mkdir $yuming
       cd $yuming
-      wget https://github.com/assimon/dujiaoka/releases/download/2.0.6/2.0.6-antibody.tar.gz && tar -zxvf 2.0.6-antibody.tar.gz && rm 2.0.6-antibody.tar.gz
+      wget https://mirror.ghproxy.com/https://github.com/assimon/dujiaoka/releases/download/2.0.6/2.0.6-antibody.tar.gz && tar -zxvf 2.0.6-antibody.tar.gz && rm 2.0.6-antibody.tar.gz
 
       docker exec nginx chmod -R 777 /var/www/html
       docker exec php chmod -R 777 /var/www/html
@@ -1474,7 +1474,7 @@ case $choice in
       # Get external IP address
       external_ip=$(curl -s ipv4.ip.sb)
 
-      wget -O /home/web/conf.d/$yuming.conf https://raw.githubusercontent.com/kejilion/nginx/main/reverse-proxy.conf
+      wget -O /home/web/conf.d/$yuming.conf https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/nginx/main/reverse-proxy.conf
       sed -i "s/yuming.com/$yuming/g" /home/web/conf.d/$yuming.conf
       sed -i "s/0.0.0.0/$external_ip/g" /home/web/conf.d/$yuming.conf
       sed -i "s/0000/3099/g" /home/web/conf.d/$yuming.conf
@@ -1502,7 +1502,7 @@ case $choice in
 
       docker start nginx
 
-      wget -O /home/web/conf.d/$yuming.conf https://raw.githubusercontent.com/kejilion/nginx/main/flarum.com.conf
+      wget -O /home/web/conf.d/$yuming.conf https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/nginx/main/flarum.com.conf
 
       sed -i "s/yuming.com/$yuming/g" /home/web/conf.d/$yuming.conf
 
@@ -1570,7 +1570,7 @@ case $choice in
       # Get external IP address
       external_ip=$(curl -s ipv4.ip.sb)
 
-      wget -O /home/web/conf.d/$yuming.conf https://raw.githubusercontent.com/kejilion/nginx/main/reverse-proxy.conf
+      wget -O /home/web/conf.d/$yuming.conf https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/nginx/main/reverse-proxy.conf
       sed -i "s/yuming.com/$yuming/g" /home/web/conf.d/$yuming.conf
       sed -i "s/0.0.0.0/$external_ip/g" /home/web/conf.d/$yuming.conf
       sed -i "s/0000/3280/g" /home/web/conf.d/$yuming.conf
@@ -1601,7 +1601,7 @@ case $choice in
       # Get external IP address
       external_ip=$(curl -s ipv4.ip.sb)
 
-      wget -O /home/web/conf.d/$yuming.conf https://raw.githubusercontent.com/kejilion/nginx/main/reverse-proxy.conf
+      wget -O /home/web/conf.d/$yuming.conf https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/nginx/main/reverse-proxy.conf
       sed -i "s/yuming.com/$yuming/g" /home/web/conf.d/$yuming.conf
       sed -i "s/0.0.0.0/$external_ip/g" /home/web/conf.d/$yuming.conf
       sed -i "s/0000/8010/g" /home/web/conf.d/$yuming.conf
@@ -1629,13 +1629,13 @@ case $choice in
 
       docker start nginx
 
-      wget -O /home/web/conf.d/$yuming.conf https://raw.githubusercontent.com/kejilion/nginx/main/typecho.com.conf
+      wget -O /home/web/conf.d/$yuming.conf https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/nginx/main/typecho.com.conf
       sed -i "s/yuming.com/$yuming/g" /home/web/conf.d/$yuming.conf
 
       cd /home/web/html
       mkdir $yuming
       cd $yuming
-      wget -O latest.zip https://github.com/typecho/typecho/releases/latest/download/typecho.zip
+      wget -O latest.zip https://mirror.ghproxy.com/https://github.com/typecho/typecho/releases/latest/download/typecho.zip
       unzip latest.zip
       rm latest.zip
 
@@ -1679,7 +1679,7 @@ case $choice in
       curl https://get.acme.sh | sh
       ~/.acme.sh/acme.sh --register-account -m xxxx@gmail.com --issue -d $yuming --standalone --key-file /home/web/certs/${yuming}_key.pem --cert-file /home/web/certs/${yuming}_cert.pem --force
 
-      wget -O /home/web/conf.d/$yuming.conf https://raw.githubusercontent.com/kejilion/nginx/main/rewrite.conf
+      wget -O /home/web/conf.d/$yuming.conf https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/nginx/main/rewrite.conf
       sed -i "s/yuming.com/$yuming/g" /home/web/conf.d/$yuming.conf
       sed -i "s/baidu.com/$reverseproxy/g" /home/web/conf.d/$yuming.conf
 
@@ -1703,7 +1703,7 @@ case $choice in
       curl https://get.acme.sh | sh
       ~/.acme.sh/acme.sh --register-account -m xxxx@gmail.com --issue -d $yuming --standalone --key-file /home/web/certs/${yuming}_key.pem --cert-file /home/web/certs/${yuming}_cert.pem --force
 
-      wget -O /home/web/conf.d/$yuming.conf https://raw.githubusercontent.com/kejilion/nginx/main/reverse-proxy.conf
+      wget -O /home/web/conf.d/$yuming.conf https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/nginx/main/reverse-proxy.conf
       sed -i "s/yuming.com/$yuming/g" /home/web/conf.d/$yuming.conf
       sed -i "s/0.0.0.0/$reverseproxy/g" /home/web/conf.d/$yuming.conf
       sed -i "s/0000/$port/g" /home/web/conf.d/$yuming.conf
@@ -1872,7 +1872,7 @@ case $choice in
       read -p "输入远程服务器IP: " useip
       read -p "输入远程服务器密码: " usepasswd
 
-      wget -O ${useip}_beifen.sh https://raw.githubusercontent.com/kejilion/sh/main/beifen.sh > /dev/null 2>&1
+      wget -O ${useip}_beifen.sh https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/sh/main/beifen.sh > /dev/null 2>&1
       chmod +x ${useip}_beifen.sh
 
       sed -i "s/0.0.0.0/$useip/g" ${useip}_beifen.sh
@@ -2146,12 +2146,12 @@ case $choice in
           # 配置Fail2ban
           rm -rf /etc/fail2ban/jail.d/*
           cd /etc/fail2ban/jail.d/
-          curl -sS -O https://raw.githubusercontent.com/kejilion/sh/main/sshd.local
+          curl -sS -O https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/sh/main/sshd.local
           systemctl restart fail2ban
           docker rm -f nginx
 
-          wget -O /home/web/nginx.conf https://raw.githubusercontent.com/kejilion/nginx/main/nginx10.conf
-          wget -O /home/web/conf.d/default.conf https://raw.githubusercontent.com/kejilion/nginx/main/default10.conf
+          wget -O /home/web/nginx.conf https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/nginx/main/nginx10.conf
+          wget -O /home/web/conf.d/default.conf https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/nginx/main/default10.conf
           localhostIP=$(curl -s ipv4.ip.sb)
           sed -i "s/localhost/$localhostIP/g" /home/web/conf.d/default.conf
 
@@ -2170,7 +2170,7 @@ case $choice in
           rm -rf /home/web/log/nginx/*
           docker restart nginx
 
-          curl -sS -O https://raw.githubusercontent.com/kejilion/sh/main/nginx.local
+          curl -sS -O https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/sh/main/nginx.local
           systemctl restart fail2ban
           sleep 1
           fail2ban-client status
@@ -2195,13 +2195,13 @@ case $choice in
                   sed -i 's/worker_connections.*/worker_connections 1024;/' /home/web/nginx.conf
 
                   # php调优
-                  wget -O /home/www.conf https://raw.githubusercontent.com/kejilion/sh/main/www-1.conf
+                  wget -O /home/www.conf https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/sh/main/www-1.conf
                   docker cp /home/www.conf php:/usr/local/etc/php-fpm.d/www.conf
                   docker cp /home/www.conf php74:/usr/local/etc/php-fpm.d/www.conf
                   rm -rf /home/www.conf
 
                   # mysql调优
-                  wget -O /home/custom_mysql_config.cnf https://raw.githubusercontent.com/kejilion/sh/main/custom_mysql_config-1.cnf
+                  wget -O /home/custom_mysql_config.cnf https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/sh/main/custom_mysql_config-1.cnf
                   docker cp /home/custom_mysql_config.cnf mysql:/etc/mysql/conf.d/
                   rm -rf /home/custom_mysql_config.cnf
 
@@ -2219,13 +2219,13 @@ case $choice in
                   sed -i 's/worker_connections.*/worker_connections 131072;/' /home/web/nginx.conf
 
                   # php调优
-                  wget -O /home/www.conf https://raw.githubusercontent.com/kejilion/sh/main/www.conf
+                  wget -O /home/www.conf https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/sh/main/www.conf
                   docker cp /home/www.conf php:/usr/local/etc/php-fpm.d/www.conf
                   docker cp /home/www.conf php74:/usr/local/etc/php-fpm.d/www.conf
                   rm -rf /home/www.conf
 
                   # mysql调优
-                  wget -O /home/custom_mysql_config.cnf https://raw.githubusercontent.com/kejilion/sh/main/custom_mysql_config.cnf
+                  wget -O /home/custom_mysql_config.cnf https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/sh/main/custom_mysql_config.cnf
                   docker cp /home/custom_mysql_config.cnf mysql:/etc/mysql/conf.d/
                   rm -rf /home/custom_mysql_config.cnf
 
@@ -3106,7 +3106,7 @@ case $choice in
               ;;
           7)
             clear
-            curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh  -o nezha.sh && chmod +x nezha.sh
+            curl -L https://mirror.ghproxy.com/https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh  -o nezha.sh && chmod +x nezha.sh
             ./nezha.sh
               ;;
           8)
@@ -3778,7 +3778,7 @@ case $choice in
                 clear
                 echo "安装提示"
                 echo "青龙面板是一个定时任务管理平台"
-                echo "官网介绍: https://github.com/whyour/qinglong"
+                echo "官网介绍: https://mirror.ghproxy.com/https://github.com/whyour/qinglong"
                 echo ""
 
                 # 提示用户确认安装
@@ -3876,7 +3876,7 @@ case $choice in
                             fi
 
                             cd /home/ && mkdir -p docker/cloud && cd docker/cloud && mkdir temp_data && mkdir -vp cloudreve/{uploads,avatar} && touch cloudreve/conf.ini && touch cloudreve/cloudreve.db && mkdir -p aria2/config && mkdir -p data/aria2 && chmod -R 777 data/aria2
-                            curl -o /home/docker/cloud/docker-compose.yml https://raw.githubusercontent.com/kejilion/docker/main/cloudreve-docker-compose.yml
+                            curl -o /home/docker/cloud/docker-compose.yml https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/docker/main/cloudreve-docker-compose.yml
                             cd /home/docker/cloud/ && docker-compose up -d
 
 
@@ -3938,7 +3938,7 @@ case $choice in
                     fi
 
                     cd /home/ && mkdir -p docker/cloud && cd docker/cloud && mkdir temp_data && mkdir -vp cloudreve/{uploads,avatar} && touch cloudreve/conf.ini && touch cloudreve/cloudreve.db && mkdir -p aria2/config && mkdir -p data/aria2 && chmod -R 777 data/aria2
-                    curl -o /home/docker/cloud/docker-compose.yml https://raw.githubusercontent.com/kejilion/docker/main/cloudreve-docker-compose.yml
+                    curl -o /home/docker/cloud/docker-compose.yml https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/docker/main/cloudreve-docker-compose.yml
                     cd /home/docker/cloud/ && docker-compose up -d
 
 
@@ -4043,7 +4043,7 @@ case $choice in
                 clear
                 echo "安装提示"
                 echo "简单图床是一个简单的图床程序"
-                echo "官网介绍: https://github.com/icret/EasyImages2.0"
+                echo "官网介绍: https://mirror.ghproxy.com/https://github.com/icret/EasyImages2.0"
                 echo ""
 
                 # 提示用户确认安装
@@ -4304,7 +4304,7 @@ case $choice in
                 clear
                 echo "安装提示"
                 echo "Speedtest测速面板是一个VPS网速测试工具，多项测试功能，还可以实时监控VPS进出站流量"
-                echo "官网介绍: https://github.com/wikihost-opensource/als"
+                echo "官网介绍: https://mirror.ghproxy.com/https://github.com/wikihost-opensource/als"
                 echo ""
 
                 # 提示用户确认安装
@@ -4652,7 +4652,7 @@ case $choice in
                 echo "安装提示"
                 echo "雷池是长亭科技开发的WAF站点防火墙程序面板，可以反代站点进行自动化防御"
                 echo "80和443端口不能被占用，无法与宝塔，1panel，npm，ldnmp建站共存"
-                echo "官网介绍: https://github.com/chaitin/safeline"
+                echo "官网介绍: https://mirror.ghproxy.com/https://github.com/chaitin/safeline"
                 echo ""
 
                 # 提示用户确认安装
@@ -4888,7 +4888,7 @@ case $choice in
           1)
               clear
               read -p "请输入你的快捷按键: " kuaijiejian
-              echo "alias $kuaijiejian='curl -sS -O https://raw.githubusercontent.com/kejilion/sh/main/kejilion.sh && chmod +x kejilion.sh && ./kejilion.sh'" >> ~/.bashrc
+              echo "alias $kuaijiejian='curl -sS -O https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/sh/main/kejilion.sh && chmod +x kejilion.sh && ./kejilion.sh'" >> ~/.bashrc
               echo "快捷键已添加。请重新启动终端，或运行 'source ~/.bashrc' 以使修改生效。"
               ;;
 
@@ -5140,7 +5140,7 @@ case $choice in
               else
                   echo "未知的包管理器!"
               fi
-              bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh') $xitong -v 64 -p $vpspasswd -port 22
+              bash <(wget --no-check-certificate -qO- 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh') $xitong -v 64 -p $vpspasswd -port 22
               ;;
             [Nn])
               echo "已取消"
@@ -5602,13 +5602,13 @@ case $choice in
                         apt install -y wget gnupg
 
                         # wget -qO - https://dl.xanmod.org/archive.key | gpg --dearmor -o /usr/share/keyrings/xanmod-archive-keyring.gpg --yes
-                        wget -qO - https://raw.githubusercontent.com/kejilion/sh/main/archive.key | gpg --dearmor -o /usr/share/keyrings/xanmod-archive-keyring.gpg --yes
+                        wget -qO - https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/sh/main/archive.key | gpg --dearmor -o /usr/share/keyrings/xanmod-archive-keyring.gpg --yes
 
                         # 步骤3：添加存储库
                         echo 'deb [signed-by=/usr/share/keyrings/xanmod-archive-keyring.gpg] http://deb.xanmod.org releases main' | tee /etc/apt/sources.list.d/xanmod-release.list
 
                         # version=$(wget -q https://dl.xanmod.org/check_x86-64_psabi.sh && chmod +x check_x86-64_psabi.sh && ./check_x86-64_psabi.sh | grep -oP 'x86-64-v\K\d+|x86-64-v\d+')
-                        version=$(wget -q https://raw.githubusercontent.com/kejilion/sh/main/check_x86-64_psabi.sh && chmod +x check_x86-64_psabi.sh && ./check_x86-64_psabi.sh | grep -oP 'x86-64-v\K\d+|x86-64-v\d+')
+                        version=$(wget -q https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/sh/main/check_x86-64_psabi.sh && chmod +x check_x86-64_psabi.sh && ./check_x86-64_psabi.sh | grep -oP 'x86-64-v\K\d+|x86-64-v\d+')
 
                         apt update -y
                         apt install -y linux-xanmod-x64v$version
@@ -5671,13 +5671,13 @@ case $choice in
             apt install -y wget gnupg
 
             # wget -qO - https://dl.xanmod.org/archive.key | gpg --dearmor -o /usr/share/keyrings/xanmod-archive-keyring.gpg --yes
-            wget -qO - https://raw.githubusercontent.com/kejilion/sh/main/archive.key | gpg --dearmor -o /usr/share/keyrings/xanmod-archive-keyring.gpg --yes
+            wget -qO - https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/sh/main/archive.key | gpg --dearmor -o /usr/share/keyrings/xanmod-archive-keyring.gpg --yes
 
             # 步骤3：添加存储库
             echo 'deb [signed-by=/usr/share/keyrings/xanmod-archive-keyring.gpg] http://deb.xanmod.org releases main' | tee /etc/apt/sources.list.d/xanmod-release.list
 
             # version=$(wget -q https://dl.xanmod.org/check_x86-64_psabi.sh && chmod +x check_x86-64_psabi.sh && ./check_x86-64_psabi.sh | grep -oP 'x86-64-v\K\d+|x86-64-v\d+')
-            version=$(wget -q https://raw.githubusercontent.com/kejilion/sh/main/check_x86-64_psabi.sh && chmod +x check_x86-64_psabi.sh && ./check_x86-64_psabi.sh | grep -oP 'x86-64-v\K\d+|x86-64-v\d+')
+            version=$(wget -q https://mirror.ghproxy.com/https://raw.githubusercontent.com/kejilion/sh/main/check_x86-64_psabi.sh && chmod +x check_x86-64_psabi.sh && ./check_x86-64_psabi.sh | grep -oP 'x86-64-v\K\d+|x86-64-v\d+')
 
             apt update -y
             apt install -y linux-xanmod-x64v$version
